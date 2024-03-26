@@ -125,8 +125,8 @@ Best regards,<br>
 
        
         await transporter.sendMail({
-            from: 'manshu.developer@gmail.com',
-            to: 'manshu.developer@gmail.com', // Recipient email address
+            from: 'rahulrajput82198@gmail.com',
+            to: 'rahulrajput82198@gmail.com', // Recipient email address
             subject: 'Thank You for Your Submission',
               text: 'Thank you for your submission!',
                 html: htmlValue
