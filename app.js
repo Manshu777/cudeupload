@@ -119,7 +119,7 @@ Best regards,<br>
         await twilioClient.messages.create({
             body: whatsappMessage,
             from: process.env.TWILIO_WHATSAPP_FROM,
-            to: `whatsapp:+917988532993`,
+            to: `whatsapp:+91918219838054`,
           });
      
         
