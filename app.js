@@ -16,6 +16,7 @@ app.use(cors());
 const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
+
 // Configure Nodemailer with your Gmail account
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -118,7 +119,7 @@ Best regards,<br>
         await twilioClient.messages.create({
             body: whatsappMessage,
             from: process.env.TWILIO_WHATSAPP_FROM,
-            to: `whatsapp:+918219838054`,
+            to: `whatsapp:+917988532993`,
           });
      
         
