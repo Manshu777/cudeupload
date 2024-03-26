@@ -26,6 +26,10 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+ app.get("/hello" , (req,res)=>{
+    res.send("Hello, world");
+ })
+
 app.post('/submit-form', async (req, res) => {
     const formData = req.body;
 
