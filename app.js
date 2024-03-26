@@ -22,8 +22,8 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
      
-    user:"rahulrajput82198@gmail.com",
-    pass:"rahulrana2001"
+        user:"rahulrajput82198@gmail.com",
+        pass:"ompp delk wfgj dvof"
     }
 });
 
@@ -35,14 +35,6 @@ app.post('/submit-form', async (req, res) => {
     const formData = req.body;
 
   
-
-    // // Craft the message dynamically based on filled fields
-    // let message = '\n';
-    // for (const key in formData) {
-    //     if (formData[key]) { // Check if field is filled
-    //         message += `${key}: ${formData[key]}\n`;
-    //     }
-    // }
 
   console.log(formData)
 const shiftTime = formData.shiftTime ? new Date(formData.shiftTime).toLocaleString() : '';
@@ -127,7 +119,7 @@ Best regards,<br>
        
         await transporter.sendMail({
             from: 'rahulrajput82198@gmail.com',
-            to: 'rahulrajput82198@gmail.com', // Recipient email address
+            to: 'rahulrajput82198@gmail.com',
             subject: 'Thank You for Your Submission',
               text: 'Thank you for your submission!',
                 html: htmlValue
