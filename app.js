@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
      
-    user:"shivamlugwal01@gmail.com",
+    user:"futuretouch.chd@gmail.com",
     pass:"nafg qhjg jwxb erds"
     }
 });
@@ -118,7 +118,7 @@ Best regards,<br>
         await twilioClient.messages.create({
             body: whatsappMessage,
             from: process.env.TWILIO_WHATSAPP_FROM,
-            to: `whatsapp:+917988532993`,
+            to: `whatsapp:+918219838054`,
           });
      
         
