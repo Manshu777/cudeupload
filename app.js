@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-
+var request = require('request');
 const app = express();
 const port = process.env.PORT || 8000;
 require('dotenv').config();
@@ -13,11 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
-
-// Configure Nodemailer with your Gmail account
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -108,10 +105,21 @@ Best regards,<br>
        // const response = await axios.post(url);
 
         console.log('Message sent successfully !!!');
-        await twilioClient.messages.create({
-            body: whatsappMessage,
-            from: process.env.TWILIO_WHATSAPP_FROM,
-            to: `whatsapp:+91918219838054`,
+        var options = {
+            'method': 'POST',
+            'url': 'https://whats-api.rcsoft.in/api/create-message',
+            'headers': {
+            },
+            formData: {
+              'appkey': '1fd9144b-a2b7-41db-8779-4a2c34e59bed',
+              'authkey': 'Ja41evnYaZ7rG5RlqTiUOL2nbEFucXSoTTLbIHY7UKDfJCSuFh',
+              'to': '918219838054',
+              'message': whatsappMessage
+            }
+          };
+          request(options, function (error, response) {
+            if (error) throw new Error(error);
+            console.log(response.body);
           });
 
       
